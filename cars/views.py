@@ -4,7 +4,7 @@ from cars.models import Car
 
 
 def cars_view(request):
-    cars = Car.objects.all()
+    cars = Car.objects.filter(factory_year = '2025')
 
     return render(request, 'cars.html', { 'cars': cars })
     
