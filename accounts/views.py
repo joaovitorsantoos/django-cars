@@ -23,10 +23,11 @@ def login_view(request):
             return redirect('cars_list')
         else:
             login_form = AuthenticationForm()
+            return render(request, 'login.html', {'login_form': login_form})
     else:
         login_form = AuthenticationForm()
-        return render(request, 'login_html', {'login_form', login_form})
+        return render(request, 'login.html', {'login_form': login_form})
     
 def logout_view(request):
     logout(request)
-    return redirect('login')
+    return redirect('cars_list')
